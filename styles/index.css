@@ -6,6 +6,10 @@
   color: #777;
 }
 
+.colorThree {
+  color: #fff;
+}
+
 .indentation {
   max-width: 1170px;
   padding-right: 15px;
@@ -23,6 +27,8 @@
   align-items: center;
   justify-content: space-between;
   min-height: 85px;
+  position: relative;
+  z-index: 100;
 }
 
 #A_Text {
@@ -124,6 +130,7 @@
   margin-left: -10px;
   padding: 10px;
   border-bottom: 1px solid #e6e6e6;
+  background-color: white;
 }
 
 .idem_drop_menu:hover {
@@ -164,6 +171,151 @@
   width: 150px;
   transition: 0.8s;
 }
+
+.slider {
+  position: relative;
+  background-image: url(../Acme.img/main-bg.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  overflow: hidden;
+  width: 100%;
+  height: 550px;
+  text-align: left;
+  white-space: nowrap
+}
+
+.slid_content {
+  text-align: left;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%,-50%);
+  display: inline-block;
+  width: 350px;
+  padding-left: 15px;
+}
+
+.tittle_slid {
+  font-size: 40px;
+  font-weight: 700;
+  font-style: oblique;
+}
+
+.text_slid {
+  line-height: 26px;
+  font-weight: 700;
+  font-style: oblique;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.button {
+  cursor: pointer;
+  transition: 0.8s;
+  top: 390px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+  color: #fff;
+  padding: 10px 5px;
+  font-size: 18px;
+  line-height: 30px;
+  width: 120px;
+  text-align: center;
+  background: #48cfad;
+}
+
+.button:hover {
+  opacity: 0.7;
+  background: rgba(72, 207, 173, 0.80);
+}
+
+.button_block {
+  position: absolute;
+  top: 92%;
+  left: 50%;
+}
+
+.button_slid_click {
+  display: inline-block;
+  position: relative;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #000000;
+  margin: 3px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1) inset, 1px 1px 1px rgba(255,255,255,0.1);
+  opacity: .7;
+}
+
+.button_slid_click:active {
+  background: red;
+}
+
+.img_slider_block {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(0%,-50%);
+}
+
+.slider_img_One {
+  width: 300px;
+  height: 447;
+}
+
+.slider_img_Two {
+  width: 300px;
+  height: 447;
+}
+
+.slider_img_Three {
+  width: 412px;
+  height: 447;
+}
+
+.slid_content_block {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  transition: 0.8s;
+}
+
+.slid_content_block:first-child {
+  margin-left: -100%;
+}
+
+.slider_container {
+  width: 100%; 
+  position: relative;
+  overflow: hidden;
+}
+
+.button_rigth {
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 97%;
+  transform: translate(-50%, 0%);
+}
+
+.button_left {
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  right: 95%;
+  transform: translate(-50%, 0%);
+}
+
+
+
 
 
 
