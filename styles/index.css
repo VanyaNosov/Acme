@@ -314,6 +314,44 @@
   transform: translate(-50%, 0%);
 }
 
+.img_block {
+  width: 100px;
+  height: 100px;
+}
+
+.container_three {
+  height: 321px;
+}
+
+.content_block {
+  margin-top: 20px;
+  text-align: center;
+  padding-right: 15px;
+  padding-left: 15px;
+  display: inline-block;
+  max-width: 350px;
+  min-width: 200px;
+}
+
+.text_content_block {
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.tittle_container_three {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.tittle_content_block {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
 
 
 
