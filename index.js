@@ -1,8 +1,20 @@
-const buttonOneSlid = document.getElementById('one_slid')
-const buttonTwoSlid = document.getElementById('Two_slid')
-const buttonThreeSlid = document.getElementById('Three_slid')
+const buttonContainerFoure = document.getElementById('button_container_foure');
+const body = document.getElementById('body');
 
-// function styleButton () {
-//   buttonOneSlid.addEventListener('click', )
+buttonContainerFoure.addEventListener('click', () => {
+  buttonContainerFoure.style.background = '#48cfad';
+})
+
+body.addEventListener('click', () => {
+  // if(buttonContainerFoure.style.background === '#48cfad') {
+  // buttonContainerFoure.style.background === 'red';
 // }
+  buttonContainerFoure.style.background = 'red';
+})
+
+
+
+
+
+
 

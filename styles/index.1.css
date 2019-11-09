@@ -358,16 +358,19 @@
 }
 
 .container_foure {
-  padding: 80px 0;
-  background: #f9f9f3;
-  max-height: 680px;
+  max-width: 1170px;
+  height: 680px;
+  margin: 0 auto;
+  padding: 30px 0px 30px 0px;
+  box-sizing: border-box;
 }
 
-.container_foure {
-  padding: 80px 0;
-  background: #f9f9f3;
-  max-height: 680px;
-  margin-bottom: 60px;
+.container_foure:before {
+  content:'';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  width: 0px;
 }
 
 .img_block_conFoure {
@@ -402,78 +405,6 @@
   max-width: 555px;
 }
 
-.hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid #dfdcdf;;
-}
-
-#last_hr {
-  margin-bottom: 60px;
-}
-
-.img_text_block {
-  vertical-align: middle;
-}
-
-.textMargin {
-  margin-bottom: 10px;
-}
-
-.content_block_foure {
-  max-width: 1050px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-.button_container_foure {
-  background: #475168;
-  border-radius: 4px;
-  padding: 6px 12px;
-  text-transform: uppercase;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.container_five {
-  max-width: 1170px;
-  height: 270px;
-  margin: 0 auto;
-}
-
-.one_block_container_five {
-  width: 50%;
-}
-
-
-
-
-/* .jackdaw {
-
-}
-
-.FA-L {
-  font-size: 1.33333333em;
-  line-height: 0.75em;
-  vertical-align: -15%;
-  color: #48cfad;
-}
-
-.fa {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.jackdaw::before {
-  content: "\f00c";
-} */
 
 
 
