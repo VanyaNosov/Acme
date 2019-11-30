@@ -3,7 +3,7 @@
 }
 
 .colorTwo {
-  color: #777;
+  color: #999;
 }
 
 .colorThree {
@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 85px;
+  min-height: 96px;
   position: relative;
   z-index: 100;
 }
