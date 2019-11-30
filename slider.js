@@ -4,9 +4,9 @@ const slidContent = document.getElementById('slid_container');
 const slidBottomLeft = document.getElementById('button_left');
 const slidBottomRight = document.getElementById('button_rigth');
 const oneSlid = document.getElementById('slid_two');
-const oneSlidBottom = document.getElementById('one_slid');
-const TwoSlidBottom = document.getElementById('two_slid');
-const ThreeSlidBottom = document.getElementById('three_slid');
+const oneSlidButton= document.getElementById('one_slid');
+const TwoSlidButton= document.getElementById('two_slid');
+const ThreeSlidButton = document.getElementById('three_slid');
 const slidsCollectionTwo = [...document.getElementsByClassName('slid_content_block_media')];
 const slidContentMedia = document.getElementById('slid_container_two');
 const button_slid_media_left = document.getElementById('button_slid_media_left');
@@ -53,11 +53,9 @@ function slideDistribution (direction, slide) {
   }
 }
 
-function some (direction,indexSt) {
+function some (direction) {
   const slidArray = document.getElementsByClassName('slid_content_block');
   const slidArrayMedia = document.getElementsByClassName('slid_content_block_media');
-  index === indexSt;
-  console.log(index)
   if (index === 0 && direction === 'left') {
     index = slidArray.length - 1;
   } else if (direction === 'left') {
@@ -117,52 +115,41 @@ function someTwo (direction) {
   } else if (direction === 'rightMedia') {
     nextIndex = index + 1;
   }
-
-  if (index === 0 && direction === 'leftMediaButton') {
-    nextIndex = slidArrayMedia.length - 1;
-  } else if (direction === 'leftMediaButton') {
-    nextIndex = index - 1
-  }
-  if (index === slidArrayMedia.length - 1 && direction === 'rightMediaButton') { 
-    nextIndex = 0
-  } else if (direction === 'rightMediaButton') {
-    nextIndex = index + 1;
-  }
   return nextIndex;
 }
 
-function sliderUsingButtons (buttons) {
-  const slidArray = document.getElementsByClassName('slid_content_block');
-  let indexSlidButton
-  if(buttons === 'oneButtons' && slidArray[1].id === 'slid_two') {
-    indexSlidButton === index - 2;
-  }else if (buttons === 'TwoSlidBottom' && slidArray[1].id === 'slid_one') {
-    console.log('1')
-  }else if (buttons === 'ThreeSlidBottom' && slidArray[1].id === 'slid_three') {
-    indexSlidButton === index + 3;
+function sliderUsingButton (indexSlidButton) {
+  let indexSlidB = index - indexSlidButton;
+  if(indexSlidB > 0) {
+    console.log(index)
+    console.log(indexSlidButton)
+    console.log(indexSlidB)
+  }else {
+    console.log(index)
+    console.log(indexSlidButton)
+    console.log(indexSlidB)
   }
+
 }
 
 startState ()
 
 function globalAmin (direction) {
-  some(direction,undefined)
+  some(direction)
   const needPutIndex = someTwo(direction);
-  sliderUsingButtons()
   slideDistribution (direction, slidsCollection[needPutIndex])
 }
 
 function globalAminTwo (direction) {
-  some(direction,undefined)
+  some(direction)
   const needPutIndex = someTwo(direction);
   slideDistribution (direction, slidsCollectionTwo[needPutIndex])
 }
 
-function globalAmin (direction) {
+function globalAminTwo (direction) {
+  some(direction)
   const needPutIndex = someTwo(direction);
-  some('leftMediaButton',undefined)
-  sliderUsingButtons()
-  slideDistribution (direction, slidsCollection[needPutIndex])
+  slideDistribution (direction, slidsCollectionTwo[needPutIndex])
 }
 
 slidBottomRight.addEventListener('click', () => {
@@ -181,14 +168,14 @@ button_slid_media_left.addEventListener('click', () => {
   globalAminTwo('leftMedia')
 })
 
-oneSlidBottom.addEventListener('click', () => {
-  globalAmin('oneSlidBottom')
+oneSlidButton.addEventListener('click', () => {
+  sliderUsingButton(0)
 })
 
-TwoSlidBottom.addEventListener('click', () => {
-  globalAmin('TwoSlidBottom')
+TwoSlidButton.addEventListener('click', () => {
+  sliderUsingButton(1)
 })
 
-ThreeSlidBottom.addEventListener('click', () => {
-  globalAmin('ThreeSlidBottom')
+ThreeSlidButton.addEventListener('click', () => {
+  sliderUsingButton(2)
 })
