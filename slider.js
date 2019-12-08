@@ -20,18 +20,16 @@ function startState () {
   const cloneTwo = slidsCollection[slidsCollection.length - 1].cloneNode(true)
   const cloneMediaOne = slidsCollectionTwo[0].cloneNode(true)
   const cloneMediaTwo = slidsCollectionTwo[slidsCollectionTwo.length - 1].cloneNode(true)
-  const cloneMediaOneTwo = cloneMediaOne.cloneNode(true);
+  const cloneMediaTwoTwo = cloneMediaTwo.cloneNode(true);
   slidContainer.innerHTML = '';
   slidContentMedia.innerHTML = '';
-  slidContentMedia.appendChild(cloneMediaOne);
-  slidContentMedia.insertBefore(cloneMediaTwo, cloneMediaOne)
-  slidContentMedia.insertBefore(cloneMediaOneTwo, cloneMediaTwo)
-  slidContainer.appendChild(cloneOne)
+  slidContentMedia.appendChild(cloneMediaTwo);
+  slidContentMedia.insertBefore(cloneMediaOne, cloneMediaTwo)
+  slidContentMedia.insertBefore(cloneMediaTwoTwo, cloneMediaOne)
+  slidContainer.appendChild(cloneThree)
+  slidContainer.insertBefore(cloneOne, cloneThree)
   slidContainer.insertBefore(cloneTwo, cloneOne)
-  slidContainer.insertBefore(cloneThree, cloneOne)
 }
-
-
 function slideDistribution (direction, slide) {
   const slidArray = document.getElementsByClassName('slid_content_block');
   const slidArrayMedia = document.getElementsByClassName('slid_content_block_media');
@@ -69,24 +67,13 @@ function some (direction) {
   }
 
   if (index === 0 && direction === 'leftMedia') {
-    index = slidArrayMedia.length - 1;
+    index = 1;
   } else if (direction === 'leftMedia') {
     index = index - 1
   }
-  if (index === slidArrayMedia.length - 1 && direction === 'rightMedia') { 
+  if (index === 1 && direction === 'rightMedia') { 
     index = 0
   } else if (direction === 'rightMedia') {
-    index = index + 1;
-  }
-
-  if (index === 0 && direction === 'leftMediaButton') {
-    index = slidArrayMedia.length - 1;
-  } else if (direction === 'leftMediaButton') {
-    index = index - 1
-  }
-  if (index === slidArrayMedia.length - 1 && direction === 'rightMediaButton') { 
-    index = 0
-  } else if (direction === 'rightMediaButton') {
     index = index + 1;
   }
 }
@@ -106,11 +93,11 @@ function someTwo (direction) {
   }
 
   if (index === 0 && direction === 'leftMedia') {
-    nextIndex = slidArrayMedia.length - 1;
+    nextIndex = 1;
   } else if (direction === 'leftMedia') {
     nextIndex = index - 1
   }
-  if (index === slidArrayMedia.length - 1 && direction === 'rightMedia') { 
+  if (index === 1 && direction === 'rightMedia') { 
     nextIndex = 0
   } else if (direction === 'rightMedia') {
     nextIndex = index + 1;
@@ -119,17 +106,18 @@ function someTwo (direction) {
 }
 
 function sliderUsingButton (indexSlidButton) {
-  let indexSlidB = index - indexSlidButton;
+  let indexSlidB = indexSlidButton - index;
   if(indexSlidB > 0) {
-    console.log(index)
-    console.log(indexSlidButton)
-    console.log(indexSlidB)
-  }else {
-    console.log(index)
-    console.log(indexSlidButton)
-    console.log(indexSlidB)
+    for(i = 0; i < Math.abs(indexSlidB); i++) {
+      globalAmin('right')
   }
-
+  console.log(indexSlidB)
+  }else {
+    console.log(indexSlidB)
+    for(i = 0; i < Math.abs(indexSlidB); i++) {
+      globalAmin('left')
+    }
+  }
 }
 
 startState ()

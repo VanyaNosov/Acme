@@ -4,40 +4,64 @@ const slidButtonThree = document.getElementById('slid_button_three');
 const slidMediaOne = document.getElementById('slid_media_one');
 const slidMediaTwo = document.getElementById('slid_media_two');
 const slidMediaThree = document.getElementById('slid_media_three');
-const buttonsObject = {
-  slidButtonOne: document.getElementById('slid_button_one'),
-  slidButtonTwo: document.getElementById('slid_button_two'),
-  slidButtonThree: document.getElementById('slid_button_three'),
-}
-const setStylesOfButtons = (eventButton, opacity) => {
-  let direction;
-  switch(eventButton) {
-    case 'slid_button_one':
-      direction = ['slid_button_one', 'slid_button_two', 'slid_button_three'];
-    break;  
-    case 'slid_button_one':
-      direction = ['slid_button_two', 'slid_button_one', 'slid_button_three'];
-    break; 
-    case 'slid_button_one':
-      direction = ['slid_button_three', 'slid_button_two', 'slid_button_one'];
-    break; 
-  }
-  buttonsObject[direction[0]].style.background = '#f4f4f4';
-  buttonsObject[direction[1]].style.background = '#48cfad';
-  buttonsObject[direction[2]].style.background = '#48cfad';
-}
 
 slidButtonOne.addEventListener('click', () => {
-  setStylesOfButtons('slid_button_one', '1')
+  slidButtonOne.className = 'slidMediaActive';
+  slidButtonTwo.className = 'slidMediaNoActive';
+  slidButtonThree.className = 'slidMediaNoActive';
 })
 
 slidButtonTwo.addEventListener('click', () => {
-  setStylesOfButtons('slid_button_two', '1')
+  slidButtonOne.className = 'slidMediaNoActive';
+  slidButtonTwo.className = 'slidMediaActive';
+  slidButtonThree.className = 'slidMediaNoActive';
 })
 
 slidButtonThree.addEventListener('click', () => {
-  setStylesOfButtons('slid_button_three', '1')
+  slidButtonOne.className = 'slidMediaNoActive';
+  slidButtonTwo.className = 'slidMediaNoActive';
+  slidButtonThree.className = 'slidMediaActive';
 })
+// const buttonsObject = {
+//   slidButtonOne: document.getElementById('slid_button_one'),
+//   slidButtonTwo: document.getElementById('slid_button_two'),
+//   slidButtonThree: document.getElementById('slid_button_three'),
+// }
+// const slidMediaObject = {
+//   slidMediaOne: document.getElementById('slid_media_one'),
+//   slidMediaTwo: document.getElementById('slid_media_two'),
+//   slidMediaThree: document.getElementById('slid_media_three'),
+// }
+// const setStylesOfButtons = (eventButton, eventButtonTwo, opacity) => {
+//   let directionOneEvent;
+//   let directionTwoEvent;
+//   switch(eventButton) {
+//     case 'slidButtonOne':
+//     directionOneEvent = ['slidButtonOne', 'slidButtonTwo', 'slidButtonThree'];
+//     break;  
+//     case 'slidButtonTwo':
+//     directionOneEvent = ['slidButtonTwo', 'slidButtonOne', 'slidButtonThree'];
+//     break; 
+//     case 'slidButtonThree':
+//     directionOneEvent = ['slidButtonThree', 'slidButtonTwo', 'slidButtonOne'];
+//     break; 
+//   }
+//   buttonsObject[directionOneEvent[0]].style.background = '#f4f4f4';
+//   buttonsObject[directionOneEvent[1]].style.background = '#48cfad';
+//   buttonsObject[directionOneEvent[2]].style.background = '#48cfad';
+// }
+
+// slidButtonOne.addEventListener('click', () => {
+//   setStylesOfButtons('slidButtonOne','slid_media_one','1')
+// })
+
+// slidButtonTwo.addEventListener('click', () => {
+//   setStylesOfButtons('slidButtonTwo','slid_media_two','1')
+// })
+
+// slidButtonThree.addEventListener('click', () => {
+//   setStylesOfButtons('slidButtonThree','slid_media_three','1')
+// })
 
 
 
