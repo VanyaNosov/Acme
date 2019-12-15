@@ -67,7 +67,7 @@ function some (direction) {
   }
 
   if (index === 0 && direction === 'leftMedia') {
-    index = 1;
+    index = slidArrayMedia.length - 1;
   } else if (direction === 'leftMedia') {
     index = index - 1
   }
@@ -108,52 +108,38 @@ function someTwo (direction) {
 function sliderUsingButton (indexSlidButton) {
   let indexSlidB = indexSlidButton - index;
   if(indexSlidB > 0) {
-    for(i = 0; i < Math.abs(indexSlidB); i++) {
-      globalAmin('right')
-  }
-  console.log(indexSlidB)
+    for(i = 0; i < indexSlidB; i++) {
+      globalAmin('right', slidsCollection)
+    }
   }else {
-    console.log(indexSlidB)
     for(i = 0; i < Math.abs(indexSlidB); i++) {
-      globalAmin('left')
+      globalAmin('left', slidsCollection)
     }
   }
 }
-
 startState ()
 
-function globalAmin (direction) {
+function globalAmin (direction, slidsCollectionArgument) {
   some(direction)
   const needPutIndex = someTwo(direction);
-  slideDistribution (direction, slidsCollection[needPutIndex])
-}
-
-function globalAminTwo (direction) {
-  some(direction)
-  const needPutIndex = someTwo(direction);
-  slideDistribution (direction, slidsCollectionTwo[needPutIndex])
-}
-
-function globalAminTwo (direction) {
-  some(direction)
-  const needPutIndex = someTwo(direction);
-  slideDistribution (direction, slidsCollectionTwo[needPutIndex])
+  slideDistribution(direction, slidsCollectionArgument[needPutIndex])
+  console.log(direction)
 }
 
 slidBottomRight.addEventListener('click', () => {
-  globalAmin('right')
+  globalAmin('right', slidsCollection)
 })
 
 slidBottomLeft.addEventListener('click', () => {
-  globalAmin('left')
+  globalAmin('left', slidsCollection)
 })
 
 buttonslidmediaright.addEventListener('click', () => {
-  globalAminTwo('rightMedia')
+  globalAmin('rightMedia', slidsCollectionTwo)
 })
 
 button_slid_media_left.addEventListener('click', () => {
-  globalAminTwo('leftMedia')
+  globalAmin('leftMedia', slidsCollectionTwo)
 })
 
 oneSlidButton.addEventListener('click', () => {
