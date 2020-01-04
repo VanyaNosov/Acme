@@ -8,41 +8,46 @@ const oneSlidв = document.getElementById('one_slid');
 const twoSlidв = document.getElementById('two_slid');
 const threeSlidв = document.getElementById('three_slid');
 
-const buttonsFunc = (direction,directionTwo) => {
+const buttonsFunc = (direction,directionTwo, directionThree) => {
   const buttonsArray = [slidButtonOne,slidButtonTwo, slidButtonThree];
   const buttonsArrayTwo = [oneSlidв,twoSlidв, threeSlidв];
+  const slidArrayTwo = [slidMediaOne,slidMediaTwo, slidMediaThree];
   buttonsArray.forEach(function(buttonsNoActive) {
     buttonsNoActive.className = 'slidMediaNoActive';
-    buttonsArrayTwo.className = 'button_slid_click_no_active';
   });
   buttonsArrayTwo.forEach(function(buttonsArrayTwo) {
     buttonsArrayTwo.className = 'button_slid_click_no_active';
   });
+  slidArrayTwo.forEach(function(slidArrayTwo) {
+    slidArrayTwo.style.opacity = '0';
+  });
   direction.className = 'slidMediaActive';
   directionTwo.className = 'button_slid_click_active';
+  directionThree.style.opacity = '1';
 }
+
 slidButtonOne.addEventListener('click', () => {
-  buttonsFunc(slidButtonOne,'')
+  buttonsFunc(slidButtonOne,'', slidMediaOne)
 })
 
 slidButtonTwo.addEventListener('click', () => {
-  buttonsFunc(slidButtonTwo,'')
+  buttonsFunc(slidButtonTwo,'', slidMediaTwo)
 })
 
 slidButtonThree.addEventListener('click', () => {
-  buttonsFunc(slidButtonThree,'')
+  buttonsFunc(slidButtonThree,'', slidMediaThree)
 })
 
 oneSlidв.addEventListener('click', () => {
-  buttonsFunc('',oneSlidв)
+  buttonsFunc('',oneSlidв,'')
 })
 
 twoSlidв.addEventListener('click', () => {
-  buttonsFunc('',twoSlidв)
+  buttonsFunc('',twoSlidв,'')
 })
 
 threeSlidв.addEventListener('click', () => {
-  buttonsFunc('',threeSlidв)
+  buttonsFunc('',threeSlidв,'')
 })
 // slidButtonOne.addEventListener('click', () => {
 //   slidButtonOne.className = 'slidMediaActive';
