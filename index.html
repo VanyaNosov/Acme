@@ -30,7 +30,7 @@
                   <ul class = 'drop_down_menu_two'>
                     <li class = 'idem_drop_menu'><a href="#"></a>Second level</li>
                     <li class = 'idem_drop_menu' id = 'itemFour'><a href="#"></a>Even more<p id = "sd_two">></p>
-                      <ul class = 'drop_down_menu_three'>
+                      <ul class = 'drop_down_menu_global m_drop_down_menu_three '>
                         <li class = 'idem_drop_menu'><a href="#"></a>3rdlevel</li>
                         <li class = 'idem_drop_menu'><a href="#"></a>3rdleve</li>
                       </ul>
@@ -50,7 +50,7 @@
                 <li class = 'idem_drop_menu'><a href="#"></a>Registration</li>
                 <li class = 'idem_drop_menu'><a href="#"></a>FAQ</li>
                 <li class = 'idem_drop_menu' id = 'itemSix'><a href="#"></a>Pricing table<p id = "sd_two">></p>
-                  <ul class = 'drop_down_menu_Four'>
+                  <ul class = 'drop_down_menu_global m_drop_down_menu_Four'>
                     <li class = 'idem_drop_menu'><a href="#"></a>3rdlevel</li>
                     <li class = 'idem_drop_menu'><a href="#"></a>3rdleve</li>
                   </ul>
@@ -124,12 +124,12 @@
               </div>
             </div> 
             <ol class = "button_block" id = "button_bottom">
-              <li class = "button_slid_click_active" id = "one_slid"></li>
-              <li class = "button_slid_click_no_active" id = "two_slid"></li>
-              <li class = "button_slid_click_no_active" id = "three_slid"></li>
+              <li class = "button_slid_click_active m_button_slid_click_active" id = "one_slid"></li>
+              <li class = "button_slid_click_active m_button_slid_click_no_active" id = "two_slid"></li>
+              <li class = "button_slid_click_active m_button_slid_click_no_active" id = "three_slid"></li>
             </ol>
-          <div class = "button_rigth" id = "button_rigth"></div>
-          <div class = "button_left" id = "button_left"></div>  
+          <div class = "button_slider" id = "button_rigth"></div>
+          <div class = "button_slider" id = "button_left"></div>  
       </div>
       <div class = "container_three">
         <div class = 'indentation'>
@@ -184,12 +184,12 @@
       <div class = "container_five">
         <div class = "one_block_container_five">
             <ul class = "buttons_block colorTwo colorThree">
-              <li class = "list_of_buttons" id = "slid_button_one">News</li>
-              <li class = "list_of_buttons" id = "slid_button_two">Events</li>
-              <li class = "list_of_buttons" id = "slid_button_three">Notice board</li>
+              <li class = "list_of_buttons m_slidMediaActive" id = "slid_button_one">News</li>
+              <li class = "list_of_buttons m_slidMediaNoActive" id = "slid_button_two">Events</li>
+              <li class = "list_of_buttons m_slidMediaNoActive" id = "slid_button_three">Notice board</li>
             </ul>
           <div class = "media_slid_block" id = "media_slid_block"> 
-            <div class = "one_slid_media" id = "slid_media_one">
+            <div class = "one_slid_media .opacityOn" id = "slid_media_one">
               <div class = "slid_content_media">
                 <img src = "Acme.img/product1.jpg" class = "img_slid_media_one">
                 <div class = "block_media">
@@ -212,7 +212,7 @@
                 </div>     
               </div>
             </div>
-            <div class = "one_slid_media" id = "slid_media_two">
+            <div class = "one_slid_media .opacityOff" id = "slid_media_two">
               <div class = "slid_content_media">
                 <div class = "block_media">
                   <h1 class = "tittle_slid_media colorFoure">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
@@ -232,7 +232,7 @@
                 </div>     
               </div>
             </div>
-            <div class = "one_slid_media" id = "slid_media_three">
+            <div class = "one_slid_media .opacityOff" id = "slid_media_three">
               <div class = "slid_content_media">
                 <div class = "block_media">
                   <p class = "text colorTwo">Notice board goes here Sed ut perspiciatis unde omnis iste natus error sit voluptatem

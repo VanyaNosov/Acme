@@ -13,6 +13,7 @@ const button_slid_media_left = document.getElementById('button_slid_media_left')
 const buttonslidmediaright = document.getElementById('button_slid_media_right');
 const slidArray = document.getElementsByClassName('slid_content_block');
 const slidArrayMedia = document.getElementsByClassName('slid_content_block_media');
+const arraySlid = document.getElementById('slid_container').childNodes;
 let index = 0;
 let nextIndex = 1;
 function startState () {
@@ -49,7 +50,6 @@ function slideDistribution (direction, slide,array,parentVariable) {
   //   slidContentMedia.insertBefore(cloneOne, array[0]);
   // }
 }
-
 function some (direction,array) {
   if (index === 0 && direction === 'left') {
     index = 2;
@@ -112,6 +112,21 @@ function sliderUsingButton (indexSlidButton) {
     }
   }
 }
+
+function creatingElementsButtons () {
+  let arraySlid = document.getElementById('slid_container').childNodes;
+  arraySlid = Array.prototype.slice.call(arraySlid);
+  const containerButtons = document.createElement('div');
+  containerButtons.className = 'button_block';
+  slidContent.appendChild(containerButtons)
+  console.log(arraySlid)
+  for(i = 0; i < arraySlid.length; i++) {
+    console.log(1)
+  }
+  console.log(slidContent.length)
+  console.log(arraySlid.length)
+}
+creatingElementsButtons () 
 startState ()
 
 function globalAmin (direction,slidsCollectionArgument,array, parentVariable) {
@@ -120,13 +135,6 @@ function globalAmin (direction,slidsCollectionArgument,array, parentVariable) {
   slideDistribution(direction, slidsCollectionArgument[needPutIndex],array,parentVariable)
   console.log(direction)
 }
-
-function arrayButtons () {
-  let arraySlidButton = document.getElementById('button_bottom').childNodes;
-  arraySlidButton = Array.prototype.slice.call(arraySlidButton);
-}
-
-arrayButtons ()
 
 slidBottomRight.addEventListener('click', () => {
   globalAmin('right',slidsCollection,slidArray,slidContent)
