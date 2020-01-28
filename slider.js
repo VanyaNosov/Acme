@@ -1,6 +1,7 @@
 const slidContainer = document.getElementById('slid_container');
 const slidsCollection = [...document.getElementsByClassName('slid_content_block')];
 const slidContent = document.getElementById('slid_container');
+const slider = document.getElementById('slider');
 const slidBottomLeft = document.getElementById('button_left');
 const slidBottomRight = document.getElementById('button_rigth');
 const oneSlid = document.getElementById('slid_two');
@@ -14,6 +15,7 @@ const buttonslidmediaright = document.getElementById('button_slid_media_right');
 const slidArray = document.getElementsByClassName('slid_content_block');
 const slidArrayMedia = document.getElementsByClassName('slid_content_block_media');
 const arraySlid = document.getElementById('slid_container').childNodes;
+const buttonsss = document.getElementById('buttons_dsds');
 let index = 0;
 let nextIndex = 1;
 function startState () {
@@ -41,14 +43,6 @@ function slideDistribution (direction, slide,array,parentVariable) {
     parentVariable.removeChild(array[array.length - 1]);
     parentVariable.insertBefore(cloneOne, array[0]);
   }
-
-  // if(direction === 'rightMedia') {
-  //   slidContentMedia.removeChild(array[0]);
-  //   slidContentMedia.appendChild(cloneOne);
-  // }else if (direction === 'leftMedia'){
-  //   slidContentMedia.removeChild(array[array.length - 1]);
-  //   slidContentMedia.insertBefore(cloneOne, array[0]);
-  // }
 }
 function some (direction,array) {
   if (index === 0 && direction === 'left') {
@@ -62,17 +56,6 @@ function some (direction,array) {
   } else if (direction === 'right') {
     index = index + 1;
   }
-
-  // if (index === 0 && direction === 'leftMedia') {
-  //   index = slidArrayMedia.length - 1;
-  // } else if (direction === 'leftMedia') {
-  //   index = index - 1
-  // }
-  // if (index === 1 && direction === 'rightMedia') { 
-  //   index = 0
-  // } else if (direction === 'rightMedia') {
-  //   index = index + 1;
-  // }
 }
 
 function someTwo (direction,array) {
@@ -86,17 +69,6 @@ function someTwo (direction,array) {
   } else if (direction === 'right') {
     nextIndex = index + 1;
   }
-
-  // if (index === 0 && direction === 'leftMedia') {
-  //   nextIndex = 1;
-  // } else if (direction === 'leftMedia') {
-  //   nextIndex = index - 1
-  // }
-  // if (index === 1 && direction === 'rightMedia') { 
-  //   nextIndex = 0
-  // } else if (direction === 'rightMedia') {
-  //   nextIndex = index + 1;
-  // }
   return nextIndex;
 }
 
@@ -116,18 +88,28 @@ function sliderUsingButton (indexSlidButton) {
 function creatingElementsButtons () {
   let arraySlid = document.getElementById('slid_container').childNodes;
   arraySlid = Array.prototype.slice.call(arraySlid);
-  const containerButtons = document.createElement('div');
+  const containerButtons = document.createElement('ol');
   containerButtons.className = 'button_block';
-  slidContent.appendChild(containerButtons)
-  console.log(arraySlid)
-  for(i = 0; i < arraySlid.length; i++) {
-    console.log(1)
-  }
-  console.log(slidContent.length)
-  console.log(arraySlid.length)
+  slider.appendChild(containerButtons)
+  const res = arraySlid.filter(el => el.className === 'slid_content_block')
+  for(i = 0; i < res.length; i++) {
+  (function (index) {
+    let buttons = document.createElement('li');
+    buttons.className = 'button_slid_click_active m_button_slid_click_no_active';
+    buttons.id = `button_bottom_${i}`;
+    containerButtons.appendChild(buttons)
+    buttons.addEventListener('click', () => {
+      sliderUsingButton(index)
+    })
+  })(i)
 }
-creatingElementsButtons () 
-startState ()
+  let bla = containerButtons.firstChild
+  bla.className = 'button_slid_click_active m_button_slid_click_active'
+  containerButtons.className = 'button_block';
+  containerButtons.id = 'button_bottom';
+}
+creatingElementsButtons() 
+startState()
 
 function globalAmin (direction,slidsCollectionArgument,array, parentVariable) {
   some(direction)
@@ -152,16 +134,5 @@ button_slid_media_left.addEventListener('click', () => {
   globalAmin('left',slidsCollectionTwo,slidArrayMedia,slidContentMedia)
 })
 
-oneSlidButton.addEventListener('click', () => {
-  sliderUsingButton(0)
-})
-
-TwoSlidButton.addEventListener('click', () => {
-  sliderUsingButton(1)
-})
-
-ThreeSlidButton.addEventListener('click', () => {
-  sliderUsingButton(2)
-})
 
 

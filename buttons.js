@@ -4,9 +4,10 @@ const slidButtonThree = document.getElementById('slid_button_three');
 const slidMediaOne = document.getElementById('slid_media_one');
 const slidMediaTwo = document.getElementById('slid_media_two');
 const slidMediaThree = document.getElementById('slid_media_three');
-const oneSlidв = document.getElementById('one_slid');
-const twoSlidв = document.getElementById('two_slid');
-const threeSlidв = document.getElementById('three_slid');
+const oneSlidв = document.getElementById('button_bottom_0');
+const twoSlidв = document.getElementById('button_bottom_1');
+const threeSlidв = document.getElementById('button_bottom_2');
+console.log(twoSlidв)
 const buttonsStylesFunc = (direction,directionThree) => {
   const buttonsArray = [slidButtonOne,slidButtonTwo, slidButtonThree];
   const slidArrayTwo = [slidMediaOne,slidMediaTwo, slidMediaThree];
