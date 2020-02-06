@@ -3,7 +3,7 @@
 }
 
 .colorTwo {
-  color: #999;
+  color: #797979;
 }
 
 .colorThree {
@@ -16,6 +16,10 @@
 
 .colorFive {
   color: #ababab;
+}
+
+.colorSix {
+  background: #f9f9f3;
 }
 
 .opacityOff {
@@ -248,6 +252,7 @@
   position: absolute;
   top: 92%;
   left: 50%;
+  transform: translate(-50%);
 }
 
 .m_button_slid_click_no_active {
@@ -369,7 +374,6 @@
 
 .tittle_container_three {
   margin-bottom: 20px;
-  font-size: 30px;
   font-weight: 300;
   text-align: center;
 }
@@ -382,12 +386,10 @@
 
 .container_foure {
   padding: 80px 0;
-  background: #f9f9f3;
 }
 
 .container_foure {
   padding: 80px 0;
-  background: #f9f9f3;
   max-height: 680px;
   margin-bottom: 60px;
 }
@@ -474,7 +476,8 @@
 
 .container_five {
   max-width: 1170px;
-  height: 300px;
+  min-height: 300px;
+  padding-bottom: 40px;
   margin: 0 auto;
   padding-left: 50px;
   text-align: center;
@@ -639,5 +642,76 @@
   padding: 20px;
 }
 
+.container_six {
+  min-height: 436px;
+  padding: 50px 0px 50px 0px;
+  box-sizing: border-box;
+}
 
+.text_tittle {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  font-size: 14px;
+}
+
+.slider_four_block {
+  width: 1140px;
+  height: 228px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.slid_content_media_two {
+  display: inline-block;
+  font-size: 0;
+  margin-right: 2px;
+}
+
+.slid_content_media_two:nth-child(4){
+  margin-right: 0px;
+}
+
+.img_slid_media_three {
+  width: 280px;
+}
+
+.button_slider_two_container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 10px;
+  bottom: 4%
+}
+
+.button_slider_two {
+  margin: 5px 5px;
+  border-radius: 20px;
+  width: 12px;
+  height: 12px;
+  border: none;
+  cursor: pointer;
+  background: #869791;
+  opacity: 0.5;
+}
+
+.button_slider_two:hover {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.button_slider_two:first-child {
+  opacity: 1;
+}
+
+.slider_four_container {
+  right: 0;
+  left: 0;
+  position: absolute;
+  transition: all 0.8s ease 0s;
+}
 

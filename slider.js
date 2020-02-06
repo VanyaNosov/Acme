@@ -70,7 +70,7 @@ function someTwo (direction,array) {
     nextIndex = index + 1;
   }
   return nextIndex;
-}
+} 
 
 function sliderUsingButton (indexSlidButton) {
   let indexSlidB = indexSlidButton - index;
@@ -93,15 +93,15 @@ function creatingElementsButtons () {
   slider.appendChild(containerButtons)
   const res = arraySlid.filter(el => el.className === 'slid_content_block')
   for(i = 0; i < res.length; i++) {
-  (function (index) {
+  function vanya (index) {
     let buttons = document.createElement('li');
     buttons.className = 'button_slid_click_active m_button_slid_click_no_active';
     buttons.id = `button_bottom_${i}`;
     containerButtons.appendChild(buttons)
     buttons.addEventListener('click', () => {
-      sliderUsingButton(index)
+    sliderUsingButton(index)
     })
-  })(i)
+  }vanya(i)
 }
   let bla = containerButtons.firstChild
   bla.className = 'button_slid_click_active m_button_slid_click_active'
