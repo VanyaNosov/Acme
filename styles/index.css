@@ -390,8 +390,9 @@
 
 .container_foure {
   padding: 80px 0;
-  max-height: 680px;
+  min-height: 680px;
   margin-bottom: 60px;
+  box-sizing: border-box;
 }
 
 .img_block_conFoure {
