@@ -18,6 +18,7 @@ const arraySlid = document.getElementById('slid_container').childNodes;
 const buttonsss = document.getElementById('buttons_dsds');
 let index = 0;
 let nextIndex = 1;
+
 function startState () {
   const cloneOne = slidsCollection[0].cloneNode(true)
   const cloneThree = slidsCollection[1].cloneNode(true)
@@ -34,6 +35,7 @@ function startState () {
   slidContainer.insertBefore(cloneOne, cloneThree)
   slidContainer.insertBefore(cloneTwo, cloneOne)
 }
+
 function slideDistribution (direction, slide,array,parentVariable) {
   const cloneOne = slide.cloneNode(true);
   if(direction === 'right') {
@@ -44,14 +46,14 @@ function slideDistribution (direction, slide,array,parentVariable) {
     parentVariable.insertBefore(cloneOne, array[0]);
   }
 }
+
 function some (direction,array) {
   if (index === 0 && direction === 'left') {
-    index = 2;
+    index = array.length - 1;
   } else if (direction === 'left') {
     index = index - 1
   }
-
-  if (index === 2 && direction === 'right') { 
+  if (index === array.length - 1 && direction === 'right') { 
     index = 0
   } else if (direction === 'right') {
     index = index + 1;
@@ -60,11 +62,11 @@ function some (direction,array) {
 
 function someTwo (direction,array) {
   if (index === 0 && direction === 'left') {
-    nextIndex = 2;
+    nextIndex = array.length - 1;
   } else if (direction === 'left') {
     nextIndex = index - 1
   }
-  if (index === 2 && direction === 'right') { 
+  if (index === array.length - 1 && direction === 'right') { 
     nextIndex = 0
   } else if (direction === 'right') {
     nextIndex = index + 1;
@@ -73,21 +75,18 @@ function someTwo (direction,array) {
 } 
 
 function sliderUsingButton (indexSlidButton) {
-  let indexSlidB = indexSlidButton - index;
-  if(indexSlidB > 0) {
-    for(i = 0; i < indexSlidB; i++) {
-      globalAmin('right', slidsCollection,slidArray,slidContent)
-    }
-  }else {
-    for(i = 0; i < Math.abs(indexSlidB); i++) {
-      globalAmin('left', slidsCollection,slidArray,slidContent)
-    }
-  }
+  const indexSlidBNoAbs = indexSlidButton - index
+  const indexSlidBAbs= Math.abs(indexSlidButton - index);
+  const direction = indexSlidBNoAbs > 0 ? 'right': 'left';
+    for(i = 0; i < indexSlidBAbs; i++) {
+      setTimeout( 
+        v => (globalAmin(direction, slidsCollection,slidArray,slidContent)),
+      800*i
+  )};
 }
 
 function creatingElementsButtons () {
-  let arraySlid = document.getElementById('slid_container').childNodes;
-  arraySlid = Array.prototype.slice.call(arraySlid);
+  let arraySlid = [...document.getElementById('slid_container').childNodes];
   const containerButtons = document.createElement('ol');
   containerButtons.className = 'button_block';
   slider.appendChild(containerButtons)
@@ -112,10 +111,9 @@ creatingElementsButtons()
 startState()
 
 function globalAmin (direction,slidsCollectionArgument,array, parentVariable) {
-  some(direction)
-  const needPutIndex = someTwo(direction);
+  some(direction,array)
+  const needPutIndex = someTwo(direction,array);
   slideDistribution(direction, slidsCollectionArgument[needPutIndex],array,parentVariable)
-  console.log(direction)
 }
 
 slidBottomRight.addEventListener('click', () => {
@@ -125,6 +123,7 @@ slidBottomRight.addEventListener('click', () => {
 slidBottomLeft.addEventListener('click', () => {
   globalAmin('left',slidsCollection,slidArray,slidContent)
 })
+
 
 buttonslidmediaright.addEventListener('click', () => {
   globalAmin('right',slidsCollectionTwo,slidArrayMedia,slidContentMedia)
