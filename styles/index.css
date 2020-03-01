@@ -592,20 +592,28 @@
   width: 50px;
   margin-right: 20px;
   height: 20px;
-  background-color: black;
 }
 
 #button_slid_media_left {
-  margin-right: 20px;
+  background-image: url(../Acme.img/bg_direction_nav.png);
+  width: 30px;
+  height: 28px;
+  margin-right: 2px;
+  cursor: pointer;
 }
 
 #button_slid_media_right {
-  margin-right: 20px;
+  background-image: url(../Acme.img/bg_direction_nav.png);
+  width: 30px;
+  height: 28px;
+  margin-right: 2px;
+  transform: rotate(180deg);
+  cursor: pointer;
 }
 
 .button_slid_block {
   position: absolute;
-  left: 50%;
+  left: 80%;
   top: 20px;
 }
 
@@ -732,6 +740,7 @@
   min-height: 268px;
   box-sizing: border-box;
   padding-left: 15px;
+  vertical-align: top;
 }
 
 .content {

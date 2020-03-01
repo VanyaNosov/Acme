@@ -28,7 +28,7 @@ const buttonsSliderFour = (direction) => {
       sliderFour.style.left = '0';
       sliderFour.style.right = -scrollToLeft;
     }
-    console.log(sliderFour.scrollWidth)
+    console.log(sliderFour.clientWidth)
   }scrollCount();
 }
 
