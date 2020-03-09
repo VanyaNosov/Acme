@@ -653,7 +653,7 @@
 
 .container_six {
   min-height: 436px;
-  padding: 50px 0px 50px 0px;
+  padding: 50px 50px 50px 50px;
   box-sizing: border-box;
 }
 
@@ -665,7 +665,8 @@
 }
 
 .slider_four_block {
-  width: 1125px;
+  max-width: 1125px;
+  width: 100%;
   height: 228px;
   overflow: hidden;
   white-space: nowrap;
@@ -679,6 +680,7 @@
   display: inline-block;
   font-size: 0;
   margin-right: 2px;
+  width: calc(100% / 4 - 2px);
 }
 
 .slid_content_media_two:nth-child(4){
@@ -686,7 +688,7 @@
 }
 
 .img_slid_media_three {
-  width: 280px;
+  width: 100%;
 }
 
 .button_slider_two_container {
@@ -723,6 +725,7 @@
   position: absolute;
   transition: all 0.8s ease 0s;
   font-size: 0px;
+  width: 100%;
 }
 
 .container_seven {
@@ -732,6 +735,7 @@
   font-size: 0;
   padding-left: 35px;
   padding-right: 50px;
+  padding-bottom: 50px;
 }
 
 .content_block_two {

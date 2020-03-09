@@ -16,11 +16,13 @@ const buttonsSliderFour = (direction) => {
   sliderFourChilds = Array.prototype.slice.call(sliderFourChilds);
   const res = sliderFourChilds.filter(el => el.className === 'slid_content_media_two')
   function scrollCount () {
+    const widthC = sliderFour.clientWidth;
+    const f = widthC / 4;
     let slidLenghtRight = res.length - 4;
     let slidLenghtLeft;
     slidLenghtLeft = slidLenghtRight;
-    const scrollToRight = slidLenghtRight * 285;
-    const scrollToLeft = slidLenghtLeft * 285;
+    const scrollToRight = slidLenghtRight * f;
+    const scrollToLeft = slidLenghtLeft * f;
     if(direction === 'right') {
       sliderFour.style.right = '0';
       sliderFour.style.left = -scrollToRight;
