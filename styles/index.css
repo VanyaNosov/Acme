@@ -785,4 +785,90 @@
   margin-top: 45px;
 }
 
+.container_eight {
+  max-width: 1170px;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+}
 
+.text_content_slid_block {
+  width: 25%;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.tittle_content_slid_block {
+  margin-bottom: 10px;
+}
+
+.slid_container_three {
+  font-size: 0px;
+}
+
+.slider_five {
+  width: 75%;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0px;
+  display: inline-block;
+  height: 135px;
+}
+
+.slid_slider_five {
+  background: #f9f9f9;
+  display: inline-block;
+  width: calc(100% / 5 - 2px);
+  margin-right: 2px;
+}
+
+.slid_slider_five:hover {
+}
+
+.dsds {
+  width: 100%;
+  height: 100%;
+  background-image: url(../Acme.img/graylogo6.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.dsds:hover {
+  background-image: url(../Acme.img/newlogo6.png)
+}
+.slid_slider_five:last-child {
+  margin-right: 0px;
+}
+
+.img_slid_five {
+  width: 100%;
+}
+
+.slid_button_five {
+  color: #444e67;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slid_button_five:hover {
+  color: #48cfad;
+}
+
+.container_button_slider {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.res {
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+}

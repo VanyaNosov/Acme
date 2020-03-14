@@ -50,7 +50,7 @@ function slideDistribution (direction, slide,array,parentVariable) {
 function some (direction,array) {
   let indexArray = 1;
   if(array === slidArray) {
-    indexArray = 2;
+    indexArray = array.length -1;
   }else {
     indexArray = 1;
   }
@@ -58,13 +58,14 @@ function some (direction,array) {
   if (index === 0 && direction === 'left') {
     index = indexArray;
   } else if (direction === 'left') {
-    index = indexArray;
+    index = index - 1;
   }
   if (index === indexArray && direction === 'right') { 
     index = 0
   } else if (direction === 'right') {
     index = index + 1;
   }
+
 }
 
 function someTwo (direction,array) {
@@ -74,6 +75,7 @@ function someTwo (direction,array) {
   }else {
     indexArray = 1;
   }
+  
   if (index === 0 && direction === 'left') {
     nextIndex = indexArray;
   } else if (direction === 'left') {
