@@ -820,16 +820,20 @@
   font-size: 0px;
   display: inline-block;
   height: 135px;
+  vertical-align: top;
 }
 
 .slid_slider_five {
   background: #f9f9f9;
   display: inline-block;
-  width: calc(100% / 5 - 2px);
+  width: calc(100% / 5);
   margin-right: 2px;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 .slid_slider_five:hover {
+
 }
 
 .dsds {
@@ -842,9 +846,9 @@
 .dsds:hover {
   background-image: url(../Acme.img/newlogo6.png)
 }
-.slid_slider_five:last-child {
-  margin-right: 0px;
-}
+/* #slid_Container_Three_media:first-child {
+  margin-left: -100%;
+} */
 
 .img_slid_five {
   width: 100%;
@@ -855,6 +859,7 @@
   font-size: 14px;
   cursor: pointer;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .slid_button_five:hover {
@@ -871,4 +876,159 @@
   display: inline-block;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.slid_Container_Three_media {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0px;
+  display: inline-block;
+  height: 100%;
+}
+
+.slid_slider_five:first-child {
+  margin-left: -21.5%;
+}
+
+.container_nine_footer {
+  background: #34495e;
+  width: 100%;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.margin_container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1170px;
+  font-size: 0px;
+}
+
+.block_info_footer {
+  vertical-align: top;
+  display: inline-block;
+  width: 25%;
+}
+
+.footer_tittle {
+  margin-bottom: 20px;
+}
+
+.contacts {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.img_contacts {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.display {
+  display: inline-block;
+}
+
+.vertical {
+  vertical-align: middle;
+}
+
+.marginText {
+  margin-left: 10px;
+  padding-bottom: 5px;
+}
+
+.border_bottom {
+  border-bottom: 1px dashed #636F79;
+}
+
+#three_block_footer {
+  padding: 0% 5%;
+  box-sizing: border-box;
+}
+
+#vertical {
+  vertical-align: top;
+}
+
+.tweet_box {
+  background: #505b71;
+  padding: 8px 0px 8px 15px;
+  border-bottom: 1px solid #636F79;
+  max-width: 262.5px;
+}
+
+.img_twitter_margin {
+  margin-right: 6px;
+}
+
+.twitter_a {
+  display: block;
+  color: #00adef;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.twitter_a:hover {
+  color: #48cfad;
+}
+
+#twitter_text_a {
+  display: inline-block;
+}
+
+.email_a {
+  color: #48cfad;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.max_width {
+  max-width: 243px;
+}
+
+.footer_small {
+  color: #fff;
+  width: 100%;
+  height: 70px;
+  background-color: #2C3E50;
+}
+
+.we_are_in {
+  background: #505b71;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 5px 10px 5px 0px;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+.we_are_in:hover {
+  background-color: #48cfad;
+}
+
+.display_flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 100%;
 }

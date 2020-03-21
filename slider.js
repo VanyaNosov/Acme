@@ -4,10 +4,6 @@ const slidContent = document.getElementById('slid_container');
 const slider = document.getElementById('slider');
 const slidBottomLeft = document.getElementById('button_left');
 const slidBottomRight = document.getElementById('button_rigth');
-const oneSlid = document.getElementById('slid_two');
-const oneSlidButton= document.getElementById('one_slid');
-const TwoSlidButton= document.getElementById('two_slid');
-const ThreeSlidButton = document.getElementById('three_slid');
 const slidsCollectionTwo = [...document.getElementsByClassName('slid_content_block_media')];
 const slidContentMedia = document.getElementById('slid_container_two');
 const button_slid_media_left = document.getElementById('button_slid_media_left');
@@ -16,6 +12,11 @@ const slidArray = document.getElementsByClassName('slid_content_block');
 const slidArrayMedia = document.getElementsByClassName('slid_content_block_media');
 const arraySlid = document.getElementById('slid_container').childNodes;
 const buttonsss = document.getElementById('buttons_dsds');
+const slidsCollectionThree = [...document.getElementsByClassName('slid_slider_five')];
+const slidsArrayThree = document.getElementsByClassName('slid_slider_five');
+const slidContentThree = document.getElementById('slid_Container_Three_media');
+const slidBottomLeftThree= document.getElementById('slid_button_five_left');
+const slidBottomRightThree = document.getElementById('slid_button_five_right');
 let index = 0;
 let nextIndex = 1;
 
@@ -26,6 +27,9 @@ function startState () {
   const cloneMediaOne = slidsCollectionTwo[0].cloneNode(true)
   const cloneMediaTwo = slidsCollectionTwo[slidsCollectionTwo.length - 1].cloneNode(true)
   const cloneMediaTwoTwo = cloneMediaTwo.cloneNode(true);
+  const cloneOneThree = slidsCollectionThree[0].cloneNode(true)
+  const cloneThreeThree  = slidsCollectionThree[1].cloneNode(true)
+  const cloneTwoThree  = slidsCollectionThree[slidsCollectionThree.length - 1].cloneNode(true)
   slidContainer.innerHTML = '';
   slidContentMedia.innerHTML = '';
   slidContentMedia.appendChild(cloneMediaTwo);
@@ -34,6 +38,9 @@ function startState () {
   slidContainer.appendChild(cloneThree)
   slidContainer.insertBefore(cloneOne, cloneThree)
   slidContainer.insertBefore(cloneTwo, cloneOne)
+  slidContentThree.appendChild(cloneThreeThree)
+  slidContentThree.insertBefore(cloneOneThree, cloneThreeThree)
+  slidContentThree.insertBefore(cloneTwoThree, cloneOneThree)
 }
 
 function slideDistribution (direction, slide,array,parentVariable) {
@@ -139,13 +146,20 @@ slidBottomLeft.addEventListener('click', () => {
   globalAmin('left',slidsCollection,slidArray,slidContent)
 })
 
-
 buttonslidmediaright.addEventListener('click', () => {
   globalAmin('right',slidsCollectionTwo,slidArrayMedia,slidContentMedia)
 })
 
 button_slid_media_left.addEventListener('click', () => {
   globalAmin('left',slidsCollectionTwo,slidArrayMedia,slidContentMedia)
+})
+
+slidBottomRightThree.addEventListener('click', () => {
+  globalAmin('right',slidsCollectionThree,slidsArrayThree,slidContentThree)
+})
+
+slidBottomLeftThree.addEventListener('click', () => {
+  globalAmin('left',slidsCollectionThree,slidsArrayThree,slidContentThree)
 })
 
 
